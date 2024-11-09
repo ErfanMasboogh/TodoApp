@@ -1,5 +1,5 @@
 # Use the official PHP image with Apache
-FROM php:8.0-apache
+FROM php:8.2-apache
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
     libjpeg-dev \
     libfreetype6-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd
+    && docker-php-ext-install gd mbstring pdo pdo_mysql tokenizer xml ctype json bcmath
 
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
