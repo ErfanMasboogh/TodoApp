@@ -7,7 +7,8 @@ RUN apt-get update && apt-get install -y \
     libjpeg-dev \
     libfreetype6-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd mbstring pdo pdo_mysql tokenizer xml ctype json bcmath
+    && docker-php-ext-install gd mbstring pdo pdo_mysql tokenizer xml ctype json bcmath \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
