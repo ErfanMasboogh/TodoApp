@@ -1,0 +1,11 @@
+{
+  "app": "masboogh-todo",
+  "port": 3000,
+  "build": {
+    "location": "iran"
+  },
+  "disks": [],
+  "laravel":{
+    "phpVersion": "8.2"
+  }
+}
